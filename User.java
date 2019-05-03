@@ -1,34 +1,27 @@
-class User{
-  String userid = "name";
+import java.util.Scanner;
+public class User{
+  String userId;
   String password;
-  date = registerDate;
-  public void Login()
+  Date registerDate;
+  public String setUserId(String id){
+    userId = id;
+  }
+  public String setPassword(String pw){
+    password = pw;
+  }
+  public void Login(){
+    Scanner login = new Scanner(System.in);
+    System.out.println("Username: ");
+    String inpUser = login.nextLine();
+    System.out.println("Password: ");
+    String inpPass = login.nextLine();
+    if(inpUser.equals(userId) && inpPass.equals(password)){
+    System.out.println("Login Successful");
+    return true;
+  }
+  else {
+    System.out.println("Login Unsuccessful");
+  }
+  return false;
 }
-class Customer extends User{
-  public void name(){
-    System.out.println("account");
-  }
-  String address =;
-  public void address(){
-    System.out.println("Where You Live")
-  }
-  String customerId = "account";
-  public void customerId(){
-    System.out.println("CustomerId")
-  }
-  public void accountBalance(){
-    System.out.println("double")
-  }
-}
-class Administrator extends User{
-  String email = "Gmail";
-  String name = "Name";
-  public void updateProducts(){
-    +product
-  }
-}
-class Order extends Customer{
-  public void placeOrder(){
-    System.out.println("Placed Order");
-  }
 }
