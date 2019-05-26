@@ -18,15 +18,19 @@ public class Sort{
 
 public void insertionSort(){
   int temp = 0;
-  for(int i = 0; i < array.length - 1; i++){
+  for(int i = 0; i <= array.length - 1; i++){
      int k = i;
-     while (k-1 > 0){
-        if (array[k-1] > array[k]){
+     //System.out.println("k: " + k);
+     while ((k-1 >=0) && (array[k-1] > array[k])) {
+
           temp = array[k];
-          array[k - 1] = array[k];
-          array[k] = temp;
+          array[k] = array[k-1];
+          array[k-1] = temp;
+          //System.out.println("array[k]= " + array[k]);
           k=k-1;
-        }
+          //System.out.println("k2: " + k);
+
+
      }
   }
 }
@@ -53,20 +57,23 @@ public void selectionSort(){
   int minIndex = 0;
   int swap = 0;
     for(int i = 0; i < array.length - 1; i++){
-      for(int j = i+1; j < array.length - 1; j++){
-        if(array[i] > array[j]){
+      minIndex = i+1;
+      for(int j = i+1; j <= array.length - 1; j++){
+        if(array[minIndex] > array[j]){
           minIndex = j;
         }
       }
+      if(array[i] > array[minIndex]){
       swap = array[i];
       array[i] = array[minIndex];
       array[minIndex] = swap;
     }
   }
+}
 
 
 public void quickSort(){
-  boolean sorted = false;
+  boolean sorted=false;
   int temp = 0;
   while(!sorted){
     array[array.length/2] = temp;
